@@ -2,7 +2,6 @@ from django.db import models
 
 from apps.authenticator.models import CustomUser
 
-from django.conf import settings
 # Create your models here.
 
 
@@ -19,7 +18,7 @@ class Produtos(models.Model):
   unidade      = models.CharField(max_length=3, null=False, default='UND')
   estoque      = models.FloatField(default=0)
   
-CustomUser = settings.AUTH_USER_MODEL
+
 class PedidoVenda(models.Model):
   
   cliente_venda = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name='cliente', blank=True, null=True)
